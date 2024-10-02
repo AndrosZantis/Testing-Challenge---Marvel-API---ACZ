@@ -1,0 +1,6 @@
+<div *ngIf="character" class="character-details">
+  <img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" alt="character image">
+  <h1>{{ character.name }}</h1>
+  <p>{{ character.description || 'No description available' }}</p>
+  <button (click)="onClose()">Back to Character List</button> 
+</div>

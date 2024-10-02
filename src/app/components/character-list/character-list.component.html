@@ -1,0 +1,24 @@
+<!-- Search Bar -->
+<div>
+  <input
+    type="text"
+    placeholder="Search for characters"
+    [(ngModel)]="searchTerm"
+    (input)="filterCharacters()" 
+    class="search-input"
+  />
+</div>
+
+
+<!-- Character List -->
+<div class="character-list">
+  <div *ngFor="let character of characters" (click)="selectCharacter(character)" class="character-item">
+    <img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" alt="{{ character.name }}">
+    <h3>{{ character.name }}</h3>
+  </div>
+</div>
+
+<!-- Character Details -->
+<div *ngIf="selectedCharacter">
+  <app-character-details [character]="selectedCharacter" (close)="closeCharacterDetails()" class="character-details"></app-character-details>
+</div>

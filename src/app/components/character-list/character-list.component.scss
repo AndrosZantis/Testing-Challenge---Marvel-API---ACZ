@@ -1,0 +1,62 @@
+/* Styles for the search input */
+.search-input {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 20px auto;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+  outline: none; /* Remove default outline */
+  border-color: #007bff; /* Change border color on focus */
+}
+
+/* Styles for the character list container */
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+  gap: 20px;
+}
+
+/* Styles for individual character items */
+.character-item {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for character items */
+.character-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for character images */
+.character-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Styles for character names */
+.character-item h3 {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #343a40;
+  font-weight: bold;
+}
+
