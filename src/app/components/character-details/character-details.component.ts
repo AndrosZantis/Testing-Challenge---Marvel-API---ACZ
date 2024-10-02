@@ -21,11 +21,10 @@ export class CharacterDetailsComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-      this.getCharacterDetails(id);
+      this.getCharacterDetails(this.character.id);
   }
   //Method that getsChatacterDetails
-  public getCharacterDetails(id: any):void {
+  public getCharacterDetails(id: number):void {
     this.marvelApi.getCharacterDetails(id).subscribe((data:
       Character[]) => {
      this.character = data[0];
