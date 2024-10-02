@@ -21,14 +21,22 @@ export class CharacterDetailsComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
+    // Check if character is defined and has an ID before fetching details
+    if (this.character && this.character.id) {
       this.getCharacterDetails(this.character.id);
+    } else {
+      console.error('Character input is not defined or missing ID');
+    }
   }
-  //Method that getsChatacterDetails
-  public getCharacterDetails(id: number):void {
-    this.marvelApi.getCharacterDetails(id).subscribe((data:
-      Character[]) => {
-     this.character = data[0];
-   });
+
+  public getCharacterDetails(id: number): void {
+    this.marvelApi.getCharacterDetails(id).subscribe((data: Character[]) => {
+      if (data && data.length > 0) {
+        this.character = data[0]; // Set the character from the response
+      } else {
+        console.error('No character found with the given ID');
+      }
+    });
   }
 
     //Method to handle back button click

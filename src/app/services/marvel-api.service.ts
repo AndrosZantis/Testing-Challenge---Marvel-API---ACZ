@@ -7,7 +7,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 })
 export class MarvelApiService {
   private apiUrl = 'https://gateway.marvel.com/v1/public/characters';
-  private apiKey = 'Insert public key from marvel here';
+  private apiKey = '2f16afaf470a9194c643b793b3745d75';
 
   constructor(private http: HttpClient) {
   }
